@@ -26,5 +26,9 @@ router.put("/:id", (req, res) => {
   // принимаем в параметр req - запрос на сервер, res - ответ сервера, "change" - что хотим сделать, server/db/userCart.json - файл который изменяем
   handler(req, res, "change", "server/db/userCart.json");
 });
+//удаление данных корзины
+router.delete("/:id", (req, res) => {
+  handler(req, res, "remove", "server/db/userCart.json");
+});
 
 module.exports = router;

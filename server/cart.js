@@ -11,8 +11,18 @@ let change = (cart, req) => {
   //возвращаем обратно данные в виде строки
   return JSON.stringify(cart, null, 4);
 };
+let remove = (cart, req) => {
+  let find = cart.contents.find(el => el.id_product === +req.params.id);
+  if (find.quantity > 1) {
+    find.quantity -= 1;
+  } else {
+    cart.contents.splice(cart.contents.indexOf(item), 1);
+  }
+  return JSON.stringify(cart, null, 4);
+};
 
 module.exports = {
   add,
   change,
+  remove,
 };

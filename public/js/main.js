@@ -9,7 +9,7 @@ const app = new Vue({
   methods: {
     getJson(url) {
       return fetch(url)
-        .then(result => result.json()) // reult - это res.send(data) из файла server.js, который вернул сервер после запроса, запаковали обратно в массив данных result.json()
+        .then(result => result.json()) // result - это res.send(data) из файла server.js, который вернул сервер после запроса, запаковали обратно в массив данных result.json()
         .catch(error => {
           // console.log(error)
           this.$refs.error.text = error;
@@ -39,6 +39,20 @@ const app = new Vue({
           "Content-Type": "application/json", // заголовок ,что мы хотим сделать запрос к серверу и данные отправить в json, те тело запроса будет в форме json
         },
         body: JSON.stringify(data), //тело запроса, data === { quantity: 1 } из cartComponents
+      })
+        .then(result => result.json())
+        .catch(error => {
+          // console.log(error)
+          this.$refs.error.text = error;
+        });
+    },
+    remove(url, data) {
+      return fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
         .then(result => result.json())
         .catch(error => {

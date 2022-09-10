@@ -1,7 +1,6 @@
 Vue.component("products", {
   data() {
     return {
-      catalogUrl: "/catalogData.json",
       filtered: [],
       products: [],
     };
@@ -22,8 +21,7 @@ Vue.component("products", {
       this.filtered = this.products.filter(el => regexp.test(el.product_name));
     },
   },
-  template: `
-  
+  template: /*html*/ `
             <div class="featured container">
               <h2 class="featuredHeader">Fetured Items</h2>
               <div class="featuredTitle">
@@ -40,19 +38,18 @@ Vue.component("products", {
 });
 Vue.component("product", {
   props: ["product", "img"],
-  template: `
+  template: /*html*/ `
             <div class="featuredItem">
               <div class="featuredImgWrap">
                 <img :src="img" :alt="product.product_name">
                 
                 <div class="featuredImgDark">
-                  <button class="addToCart" @click="$emit('add-product', product)>
+                  <button class="addToCart" @click="$emit('add-product', product)">
                     <img src="./img/cart.svg" alt="" />
                       Add to Cart
                   </button>
                 </div>
               </div>
-              <button class="buy-btn" @click="$emit('add-product', product)">Купить</button>
               <div class="featuredData">
                 <div class="featuredName">{{product.product_name}}</div>
                 <div class="featuredText">
@@ -62,10 +59,4 @@ Vue.component("product", {
               </div>
             </div> 
     `,
-  //     <div class="desc">
-  //         <h3>{{product.product_name}}</h3>
-  //         <p>{{product.price}}</p>
-  //         <button class="buy-btn" @click="$emit('add-product', product)">Купить</button>
-  //     </div>
-  // </div>
 });

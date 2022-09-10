@@ -4,9 +4,9 @@ Vue.component("filter-el", {
       userSearch: "",
     };
   },
-  template: `
+  template: /*html*/ `
 
-  <form action="#" class="search-icon-form" @submit.prevent="$parent.$refs.products.filter(userSearch)">
+  <form action="#" class="search-icon-form" @submit.prevent="$root.$refs.products.filter(userSearch)">
   <input
     class="search-icon-form__input"
     id="search"

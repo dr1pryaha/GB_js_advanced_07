@@ -16,7 +16,7 @@ let remove = (cart, req) => {
   if (find.quantity > 1) {
     find.quantity -= 1;
   } else {
-    cart.contents.splice(cart.contents.indexOf(item), 1);
+    cart.contents.splice(cart.contents.indexOf(find), 1);
   }
   return JSON.stringify(cart, null, 4);
 };

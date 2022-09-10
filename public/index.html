@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Интернет-магазин</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div id="app">
-    <header>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
         <div class="logo">E-shop</div>
         <div class="cart">
-
-            <filter-el></filter-el>
-            <cart ref="cart"></cart>
+          <filter-el></filter-el>
+          <cart ref="cart"></cart>
         </div>
-    </header>
-    <main>
+      </header>
+      <header-el></header-el>
+      <main>
         <error ref="error"></error>
+        <div class="newArrivals">
+          <div class="container">
+            <h1>NEW ARRIVALS</h1>
+            <nav>
+              <a href="#">HOME</a>
+              <span>/</span>
+              <a href="#">MEN</a>
+              <span>/</span>
+              <a href="#">NEW ARRIVALS</a>
+            </nav>
+          </div>
+        </div>
+        <category-el></category-el>
         <products ref="products"></products>
-    </main>
-</div>
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+      </main>
+      <services-el></services-el>
+      <subscribe-el></subscribe-el>
+      <footer-el></footer-el>
+    </div>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/ProductComponent.js"></script>
-<script src="js/CartComponent.js"></script>
-<script src="js/FilterComp.js"></script>
-<script src="js/ErrorComp.js"></script>
+    <script src="js/HeaderComp.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/FilterComp.js"></script>
+    <script src="js/ErrorComp.js"></script>
+    <script src="js/CategoryComp.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/ServicesComp.js"></script>
+    <script src="js/SubscribeComp.js"></script>
+    <script src="js/FooterComponent.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

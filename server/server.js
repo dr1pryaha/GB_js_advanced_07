@@ -7,11 +7,6 @@ app.use(express.json()); // активируем работу JSON
 app.use("/", express.static("public")); //express.static('public') - запускает папку public, в которой лежит файл index.html
 app.use("/api/cart", cart); // при запросе к /api/cart (GET, PUT, POST etc) перенаправляем в обработчик cart= require("./cartRouter")
 
-// app.get();
-// app.post();
-// app.put();
-// app.delete();
-
 //ожидание запроса к /api/products
 app.get("/api/products", (req, res) => {
   //читаем файл по пути server/db/products.json
